@@ -1,0 +1,5 @@
+*.pyc
+*~
+__pycache__
+projeto-crud
+informacoes.txt
