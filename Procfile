@@ -1,0 +1,1 @@
+web: gunicorn djangoCrudExemplo.wsgi --log-file –
