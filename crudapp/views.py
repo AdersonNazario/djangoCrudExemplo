@@ -4,7 +4,9 @@ from .models import Servico, Contact
 from .forms import ContactForm
 from django.views.generic import ListView, DetailView
 
+
 # Create your views here.
+
 
 class IndexView(ListView):
     template_name = 'crudapp/index.html'

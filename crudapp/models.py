@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import date
+from datetime import date, time
 # Create your models here.
 
 
@@ -19,7 +19,8 @@ class Contact(models.Model):
     # address = models.TextField(blank=True, null=True)
     # description = models.TextField(blank=True, null=True)
     servico = models.ForeignKey(Servico, on_delete=models.CASCADE, null=True)
-    agendamento = models.DateField('Data Agendamento', default=date.today)
+    agendamento = models.DateField('Agendamento Sugerido', default=date.today)
+    hora = models.TimeField('Hora', default=time(8, 00))
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
     
     def __str__(self):
