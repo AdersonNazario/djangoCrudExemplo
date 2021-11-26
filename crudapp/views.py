@@ -23,8 +23,8 @@ def create(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('index')
+            resp = form.save()
+            return redirect('detail',resp.pk)
     form = ContactForm()
 
     return render(request,'crudapp/create.html',{'form': form})
