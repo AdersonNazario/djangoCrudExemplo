@@ -28,6 +28,7 @@
 
                 <li class="list-group-item ">
                     <a href="{% url 'detail' contact.pk %}"> {{ contact.nome }}</a> <span class="badge"></span>
+                    <p> {{ contact.agendamento|date:'d-m-Y' }} {{ contact.hora| time:'H' }}h</p> <span class="badge"></span>
                 </li>
             </ul>
             <br>

@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import date, time
+from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 # Create your models here.
 
 
@@ -22,6 +24,14 @@ class Contact(models.Model):
     agendamento = models.DateField('Agendamento Sugerido', default=date.today)
     hora = models.TimeField('Hora', default=time(8, 00))
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     
     def __str__(self):
         return self.nome
+
+class CustomUser(AbstractUser):
+    pass
+    # add additional fields in here
+
+    def __str__(self):
+        return self.username
