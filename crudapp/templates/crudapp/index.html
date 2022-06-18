@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
         <div class="col-md-10 col-xs-10 col-sm-10">
-            <h3 class="round3" style="text-align:center;">Contacts</h3>
+            <h3 class="round3" style="text-align:center;">Contato</h3>
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
     </div>
@@ -13,7 +13,7 @@
         <div class="col-md-2 col-xs-1 col-sm-1">
             <br />
             <a href="{% url 'create' %}">
-                <button type="button" class="btn btn-success">
+                <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-plus"></span>
                 </button>
             </a>
@@ -35,21 +35,21 @@
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1">
             <a href="{% url 'detail' contact.pk %}">
-                <button type="button" class="btn btn-info">
+                <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-open"></span>
                 </button>
             </a>
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1">
             <a href="{% url 'edit' contact.pk %}">
-                <button type="button" class="btn btn-info">
+                <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </button>
             </a>
         </div>
         <div class="col-md-1 col-xs-1 col-sm-1">
             <a href="{% url 'delete' contact.pk %}">
-                <button type="button" class="btn btn-danger">
+                <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-trash"></span>
                 </button>
             </a>
