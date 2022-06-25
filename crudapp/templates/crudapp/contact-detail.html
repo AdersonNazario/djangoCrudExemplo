@@ -2,14 +2,14 @@
 <p>não implementado</p> -->
 {% extends 'crudapp/base.html' %}
 {% block content %}
-<html>
+
 
         <div class="col-md-1">
             <p>{{object.nome}}</p>
-            <a href="{% url 'index' %}">
+            <a class="link" href="{% url 'index' %}">
             Retorne!</a>
-            <p><a href="{% url 'logout' %}">Log Out</a></p>
+            <p><a class="link" href="{% url 'logout' %}">Log Out</a></p>
         </div>
 
-</html
+
 {% endblock %}

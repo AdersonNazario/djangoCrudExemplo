@@ -1,6 +1,6 @@
 {% extends 'crudapp/base.html' %}
 {% block content %}
-<div class="container-fluid">
+<div  class="container-fluid" >
     <div class="row">
         <div class="col-md-1 col-xs-1 col-sm-1"></div>
         <div class="col-md-10 col-xs-10 col-sm-10">
@@ -26,8 +26,8 @@
         <div class="col-md-7 col-xs-7 col-sm-7">
             <ul class="list-group">
 
-                <li class="list-group-item ">
-                    <a href="{% url 'detail' contact.pk %}"> {{ contact.nome }}</a> <span class="badge"></span>
+                <li class="list-group-item">
+                    <a class="link" href="{% url 'detail' contact.pk %}"> {{ contact.nome }}</a> <span class="badge"></span>
                     <p> {{ contact.agendamento|date:'d-m-Y' }} {{ contact.hora| time:'H' }}h</p> <span class="badge"></span>
                 </li>
             </ul>

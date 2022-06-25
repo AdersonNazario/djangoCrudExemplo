@@ -4,11 +4,11 @@
 {% block content %}
 {% if user.is_authenticated %}
   Olá {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-  <p><a href="{% url 'index' %}">Lista de horários</a></p>
+  <p><a class="link" href="{% url 'logout' %}">Log Out</a></p>
+  <p><a class="link" href="{% url 'index' %}">Lista de horários</a></p>
 {% else %}
   <p>Você não está logado</p>
-  <a href="{% url 'login' %}" class="link">Log In</a> |
-  <a href="{% url 'signup' %}" class="link">Sign Up</a>
+  <a class="link" href="{% url 'login' %}" >Log In</a> |
+  <a class="link" href="{% url 'signup' %}" >Sign Up</a>
 {% endif %}
 {% endblock %}

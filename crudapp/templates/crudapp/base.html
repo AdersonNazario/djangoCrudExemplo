@@ -1,29 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang='pt-BR'>
 <head>
  <title>Projeto Integrador Grupo 109</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-</head>
+
 <style>
+
+h1, h2 {color:#131313}
+
 .btn-default
 {
-  background-color: #68889E;
+  background-color: #131313;
   color:#FFF;
-  border-color: #2F3E48;
+  border-color: #131313;
+  border-width: 2px
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
 
-  background-color: #2F3E48;
-  color:#FFF;
-  border-color: #31347B;
+  background-color: #FFFFFF;
+  color:#131313;
+  border-color: #131313;
+  font-weight: bold
  }
 
-.alert-light {background-color: #FFF;}
+.link { color: #000000 } /* CSS link color (red) */
+.link:hover { font-weight: bold; color: #000000 } /* CSS link hover (red) */
+.alert-light {  background-color: #131313;font-weight: bold; color: #FFFFFF }
 
+.list-group-item {border-color:#131313;font-weight: bold; border-width: 2px}
 </style>
-<body style="background-color:#D2D2D2">
+</head>
+
+<body>
 <h1>Projeto integrador</h1>
 <h2>Grupo 109</h2>
 {% block content %}
