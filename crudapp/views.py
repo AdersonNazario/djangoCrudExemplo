@@ -38,13 +38,8 @@ def create(request):
         if form.is_valid():
             form.instance.author = request.user
             resp = form.save()
-            messages.success(request, 'Agendamento cadastrado')            
             return redirect('detail',resp.pk)
-        else:
-            messages.error(request, 'Não foi possível cadastrar')
-            messages.error(request, form.errors)
     form = ContactForm()
-
     return render(request,'crudapp/create.html',{'form': form})
 
 @login_required
