@@ -12,6 +12,7 @@ from django.views.generic.edit import CreateView
 
 from .forms import CustomUserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.shortcuts import redirect
 
 
@@ -37,7 +38,11 @@ def create(request):
         if form.is_valid():
             form.instance.author = request.user
             resp = form.save()
+            messages.success(request, 'Agendamento cadastrado')            
             return redirect('detail',resp.pk)
+        else:
+            messages.error(request, 'Não foi possível cadastrar')
+            messages.error(request, form.errors)
     form = ContactForm()
 
     return render(request,'crudapp/create.html',{'form': form})

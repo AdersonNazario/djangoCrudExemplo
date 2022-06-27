@@ -4,11 +4,11 @@
 {% block content %}
 
 
-        <div class="col-md-1">
+        <div class="col-md-12 col-xs-12 col-sm-12">
             <p>{{object.nome}}</p>
-            <a class="link" href="{% url 'index' %}">
-            Retorne!</a>
-            <p><a class="link" href="{% url 'logout' %}">Log Out</a></p>
+            <a class="btn btn-default" href="{% url 'index' %}">
+            Retornar Agendamentos</a>
+            <p><br/><a class="btn btn-default" href="{% url 'logout' %}">Sair do site</a></p>
         </div>
 
 

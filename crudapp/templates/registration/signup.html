@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h3>Sign up</h3>
-  <form method="post">
+  <h3>Preencha o formulário para inscrever-se</h3>
+  <form method="post" >
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit" class = "btn btn-default">Sign Up</button>
+    <button type="submit" class = "btn btn-default">Inscrever-se</button>
   </form>
 {% endblock %}

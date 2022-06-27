@@ -2,13 +2,15 @@
 
 
 {% block content %}
+<div class="col-md-12 col-xs-12 col-sm-12">
 {% if user.is_authenticated %}
   Olá {{ user.username }}!
-  <p><a class="link" href="{% url 'logout' %}">Log Out</a></p>
-  <p><a class="link" href="{% url 'index' %}">Lista de horários</a></p>
+  <p><a class="btn btn-default" href="{% url 'logout' %}">Sair</a></p>
+  <p><a class="btn btn-default" href="{% url 'index' %}">Lista de horários</a></p>
 {% else %}
   <p>Você não está logado</p>
-  <a class="link" href="{% url 'login' %}" >Log In</a> |
-  <a class="link" href="{% url 'signup' %}" >Sign Up</a>
+  <a class="btn btn-default" href="{% url 'login' %}" >Entrar</a> |
+  <a class="btn btn-default" href="{% url 'signup' %}" >Inscrever-se</a>
 {% endif %}
+</div>
 {% endblock %}

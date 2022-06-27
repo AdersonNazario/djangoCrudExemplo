@@ -23,9 +23,13 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta:
         model = CustomUser
         fields = ("username", "email")
+        username = forms.CharField(label='Nome do Usuário', min_length=5, max_length=150)  
+        email = forms.EmailField(label='email')  
 
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = CustomUser
         fields = ("username", "email")
+        username = forms.CharField(label='Nome do Usuário', min_length=5, max_length=150)  
+        email = forms.EmailField(label='email')  
 
