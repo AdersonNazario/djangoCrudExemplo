@@ -22,6 +22,7 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("crudapp.urls")),
+    path("api/", include("crudapp.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
     path('contacts/', views.IndexView.as_view(), name='index'),
@@ -29,4 +30,6 @@ urlpatterns = [
     path('contacts/edit/<int:pk>/', views.edit, name='edit'),
     path('contacts/create/', views.create, name='create'),
     path('contacts/delete/<int:pk>/', views.delete, name='delete'),
+    path('', include('rest_auth.urls')),
+    path('registration/', include('rest_auth.registration.urls')),
 ]

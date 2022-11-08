@@ -16,6 +16,15 @@ from django.contrib import messages
 from django.shortcuts import redirect
 
 
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+
+from .serializers import ContactSerializer
+from rest_framework import status
+
+
 # Create your views here.
 
 
@@ -65,3 +74,21 @@ class SignUpView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy("login")
     template_name = "registration/signup.html"
+
+@api_view(["GET"])
+@csrf_exempt
+@permission_classes([IsAuthenticated])
+def welcome(request):
+    content = {"message": "Bem-vindo PI-III!"}
+    return JsonResponse(content)
+
+
+
+@api_view(["GET"])
+@csrf_exempt
+@permission_classes([IsAuthenticated])
+def obter_contatos(request):
+    user = request.user.id
+    contatos = Contact.objects.filter(author=user)
+    serializer = ContactSerializer(contatos, many=True)
+    return JsonResponse({'contatos': serializer.data}, safe=False, status=status.HTTP_200_OK)
